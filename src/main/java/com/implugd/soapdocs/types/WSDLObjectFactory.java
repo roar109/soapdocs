@@ -142,15 +142,33 @@ public class WSDLObjectFactory
          {
             result.setName (element.getName ().getLocalPart ());
          }
+         else
+         {
+            result.setName ("");
+         }
          if (element.getType () != null)
          {
             result.setType (element.getType ().getPrefix () + ":" + element.getType ().getLocalPart ());
          }
+         else
+         {
+            result.setType ("");
+         }
 
-         result.setMinOccurs (element.getMinOccurs ());
-         result.setMaxOccurs (element.getMaxOccurs ());
+         result.setMinOccurs (ifIsNullOrEmpty (element.getMinOccurs ()));
+         result.setMaxOccurs (ifIsNullOrEmpty (element.getMaxOccurs ()));
       }
       return result;
+   }
+
+
+   private String ifIsNullOrEmpty (final String string)
+   {
+      if ( (string == null) || "".equals (string))
+      {
+         return "";
+      }
+      return string;
    }
 
 }

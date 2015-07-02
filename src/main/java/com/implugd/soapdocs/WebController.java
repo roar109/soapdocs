@@ -45,6 +45,7 @@ public class WebController
       final ModelAndView modelAndView = new ModelAndView ();
       modelAndView.setViewName ("SOAP");
       modelAndView.addObject ("model", model);
+
       return modelAndView;
    }
 

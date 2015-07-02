@@ -23,7 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class WebController
 {
    WSDLReader   reader;
-   final String url = "http://employeesvcs-qa.24hourfit.com:8180/EmployeeServices/WebService/EmployeeService-1.0.0?wsdl";
+   final String url = "http://esbeap-dev.24hourfit.com:8180/ProductSalesFacade/WebService/ProductSales-1.0.0?wsdl";
 
 
    /**

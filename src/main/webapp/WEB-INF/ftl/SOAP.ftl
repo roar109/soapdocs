@@ -69,8 +69,13 @@
                                                 <#list operation.input.elements as inputElement>
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <h4 class="text-primary">${inputElement.name}</h4>
-                                                        <p class="text-success">${inputElement.type}</p>
+                                                         <#if inputElement.name??>
+                                                             <h4 class="text-primary">${inputElement.name}</h4>
+                                                         </#if>
+                                                         <#if inputElement.type??>
+                                                            <p class="text-success">${inputElement.type}</p>
+                                                         </#if>
+                                                        
                                                     </div>
                                                 </div>
                                                 </#list>

@@ -78,7 +78,10 @@ public class WSDLObjectFactory
       {
          result = new WSDLOperation ();
          result.setName (operation.getName ().getLocalPart ());
-         result.setFault (map.get (operation.getFault ().getMessage ().getLocalPart ()));
+         if (operation.getFault () != null)
+         {
+            result.setFault (map.get (operation.getFault ().getMessage ().getLocalPart ()));
+         }
          result.setOutput (map.get (operation.getOutput ().getMessage ().getLocalPart ()));
          result.setInput (map.get (operation.getInput ().getMessage ().getLocalPart ()));
       }
